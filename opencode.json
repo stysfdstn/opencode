@@ -1,6 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "ollama/uncensored-dev",
+  "small_model": "ollama/uncensored-dev",
+  "default_agent": "beast",
   "enabled_providers": ["ollama"],
   "provider": {
     "ollama": {
@@ -11,9 +13,16 @@
       },
       "models": {
         "uncensored-dev": {
-          "name": "uncensored-dev"
+          "name": "uncensored-dev",
+          "options": {
+            "num_ctx": 65536,
+            "temperature": 0.6
+          }
         }
       }
     }
+  },
+  "skills": {
+    "paths": [".opencode/skills"]
   }
 }

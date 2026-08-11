@@ -15,7 +15,7 @@
         "uncensored-dev": {
           "name": "uncensored-dev",
           "options": {
-            "num_ctx": 65536,
+            "num_ctx": 32768,
             "temperature": 0.6
           }
         }

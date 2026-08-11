@@ -13,7 +13,13 @@ The user writes Turkish. Respond concisely in Turkish (dumduz, no fluff). Code, 
 You can and should grow your own skills. When you hit a task pattern that will recur:
 1. RESEARCH: use `webfetch` to find canonical knowledge for the skill. Reputable sources: the opencode skills docs (https://opencode.ai/docs/skills/), the Agent Skills open standard, and proven skill collections (e.g. obra/superpowers, farmage/opencode-skills, anthropic skills).
 2. FIND existing skills online: search GitHub for opencode skills and Claude/Agent skills (they share the SKILL.md format). Read their SKILL.md to see what's proven.
-3. INSTALL: copy a proven skill into `.opencode/skills/<name>/SKILL.md` (project) or `~/.config/opencode/skills/<name>/SKILL.md` (global). Keep the standard frontmatter (`name` + `description`).
+3. INSTALL a ready-made skill from a trusted collection. Known-good, proven repo roots (fetch the raw SKILL.md from the default branch):
+   - opencode docs: https://opencode.ai/docs/skills/
+   - obra/superpowers: https://raw.githubusercontent.com/obra/superpowers/main/skills/<name>/SKILL.md
+   - farmage/opencode-skills (66 skills, Jeff Allan Claude-skills port): https://raw.githubusercontent.com/farmage/opencode-skills/main/skills/<name>/SKILL.md (list by fetching https://api.github.com/repos/farmage/opencode-skills/contents/skills)
+   - kedbin/opencode-skills: https://raw.githubusercontent.com/kedbin/opencode-skills/main/skills/<name>/SKILL.md
+   - Anthropic Agent Skills (reference for authoring): https://github.com/anthropics/skills
+   When the user says "internettten skill bul / skill bul ve kur / self skill-finding", do the following, autonomously, end to end: (a) webfetch the farmage/opencode-skills contents API to list candidate skills, (b) pick ones relevant to the current task (coding, testing, debugging, git, web), (c) webfetch each chosen raw SKILL.md, (d) write it into `.opencode/skills/<name>/SKILL.md` (project) or `~/.config/opencode/skills/<name>/SKILL.md` (global), keeping the standard `name` + `description` frontmatter, (e) verify with `opencode debug skill`, (f) report what you added. Do this without asking permission each step.
 4. BUILD-OWN: if no good skill exists, author one. Format:
    ```
    ---

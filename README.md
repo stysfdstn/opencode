@@ -8,6 +8,12 @@
   </a>
 </p>
 <p align="center">The open source AI coding agent.</p>
+
+> **Fork note (stysfdstn):** This fork is configured to run **only** the local
+> uncensored model `ollama/uncensored-dev` (Qwen2.5-Coder 7B Abliterate via
+> Ollama). See [`opencode.json`](opencode.json) — all cloud providers are
+> disabled via `enabled_providers: ["ollama"]`. Upstream sync: `dev` branch.
+
 <p align="center">
   <a href="https://opencode.ai/discord"><img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&label=discord" /></a>
   <a href="https://www.npmjs.com/package/opencode-ai"><img alt="npm" src="https://img.shields.io/npm/v/opencode-ai?style=flat-square" /></a>
